@@ -6,7 +6,7 @@ public class Main {
 		
 		Life F = new Life();
 		
-		int MAX = 10;
+		/* int MAX = 10;
 		int [][] matriz = new int[MAX][MAX];
 		int i,j;
 		
@@ -16,7 +16,7 @@ public class Main {
 			{
 				matriz[i][j] = Integer.parseInt(JOptionPane.showInputDialog("0 = Morta, 1 = Viva"));
 			}	
-		}
+		} */
 	
 	F.inicializa();
 	F.simulaVida(10);
