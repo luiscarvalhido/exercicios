@@ -2,10 +2,10 @@ package jogo;
 
 class Life
 {
-	int MAX = 10 ;
-	//Tamanho da matriz
-	int[][] matriz = new int[MAX][MAX] ;
-	void inicializa()
+	private int matriz[][];
+	private int numColunas;
+	
+	public void inicializa()
 	{
 		int i,j;    
 		
@@ -14,7 +14,7 @@ class Life
 				matriz[i][j]=(int)(Math.random() * 1.5);
 	}
 	
-	void imprimeTabuleiro()
+	public void imprimeTabuleiro()
 	{
 		int i,j;
 		for(i=0;i<MAX;i++)
@@ -29,12 +29,13 @@ class Life
 		System.out.println();
 	}
 	
-	int vizinhos(int i, int j)
+	public int vizinhos(int i, int j)
 	{
 		 return matriz[i-1][j-1] + matriz[i-1][j] + matriz[i-1][j+1] +	matriz[i][j-1] + matriz[i][j+1] +matriz[i+1][j-1]+matriz[i+1][j]+matriz[i+1][j+1];
 	}
 	
-	int [][] iteração(){
+	private int [][] iteração()
+	{
 		int [][] aux = new int[MAX][MAX];
 		int i, j;
 		
@@ -59,7 +60,8 @@ class Life
 		return aux; //devolve a matriz com a nova iteração
 	}
 	
-		void simulaVida ( int quant ){
+	public void simulaVida ( int quant )
+	{
 			int i ;
 		 for ( i = 0 ; i < quant ; i ++){
 			imprimeTabuleiro();
