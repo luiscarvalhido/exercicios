@@ -25,32 +25,24 @@ public class LifeTest {
 
         @Test
         public void testInicializa() {
-               fail("Not yet implemented");
+               matrizNula = new int[MAX][MAX];
+                
+                for (i =1; i < MAX - 1; i++)
+                        for (j = 1; i < MAX - 1; i++)
+                                matrizNula[i][j] = (int) (0);
+                
+                novoJogo.inicializa();
+                assertThat(novoJogo.getMatriz(), not(equalTo(matrizNula)));
         }
 
         @Test
         public void testInicializaIntArrayArray() {
-               fail("Not yet implemented");
-        }
-
-        @Test
-        public void testImprimeTabuleiro() {
+               matrizNaoNula = new int[MAX][MAX];
+                for (i =1; i < MAX - 1; i++)
+                        for (j = 1; i < MAX - 1; i++)
+                                matrizNaoNula[i][j] = (int) (Math.random() * 1.5);
                 
+                novoJogo.inicializa(matrizNaoNula);
+                assertThat(novoJogo.getMatriz(), equalTo(matrizNaoNula));
         }
-
-        @Test
-        public void testVizinhos() {
-                fail("Not yet implemented");
-        }
-
-        @Test
-        public void testIteracao() {
-                fail("Not yet implemented");
-        }
-
-        @Test
-        public void testSimulaVida() {
-                fail("Not yet implemented");
-
-
 }
