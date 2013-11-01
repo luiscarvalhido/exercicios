@@ -5,21 +5,33 @@ class Life
 	private int matriz[][];
 	private int numColunas;
 	
+	public Life(int numColunas)
+	{
+		this.numColunas = numColunas;
+		this.matriz = new int[this.numColunas][this.numColunas];
+	
+	}
+	
 	public void inicializa()
 	{
-		int i,j;    
-		
-		for(i=1; i< MAX -1;i++)
-			for(j=1;j< MAX -1;j ++)
-				matriz[i][j]=(int)(Math.random() * 1.5);
+		for (int i = 1; i < (this.numColunas - 1); i++) {
+                        for (int j = 1; j < (this.numColunas - 1); j++) {
+                                matriz[i][j] = (int) (Math.random() * 1.5);
+                        }
+                }
+	}
+	
+	public void inicializa(int matriz[][])
+	{
+		this.matriz = matriz;	
 	}
 	
 	public void imprimeTabuleiro()
 	{
 		int i,j;
-		for(i=0;i<MAX;i++)
+		for(i=0;i< this.numColunas;i++)
 		{
-			for(j=0;j<MAX;j++)
+			for(j=0;j< this.numColunas;j++)
 				if(matriz[i][j] == 1 )
 					System.out.print("∗");
 				else
@@ -36,11 +48,11 @@ class Life
 	
 	private int [][] iteração()
 	{
-		int [][] aux = new int[MAX][MAX];
+		int [][] aux = new int[this.numColunas][this.numColunas];
 		int i, j;
 		
-		for(i=1; i< MAX - 1; i++)
-			for(j=1; j< MAX - 1; j++)
+		for(i=1; i< this.numColunas - 1; i++)
+			for(j=1; j< this.numColunas - 1; j++)
 			{
 				if (matriz[i][j] == 1)	// se está viva         
 					{
@@ -67,4 +79,16 @@ class Life
 			imprimeTabuleiro();
 		}
 	}
+	
+	//add get+set
+
+	public int[][] getMatriz() 
+	{
+                return matriz;
+        }
+
+        public void setMatriz(int[][] matriz) 
+        {
+                this.matriz = matriz;
+        }
 }
