@@ -5,12 +5,12 @@ import javax.swing.JOptionPane;
 public class Main {
 
 	public static void main(String[] args) {
-		
-		Life F = new Life();
-		
-		/* int MAX = 10;
+			
+		int MAX = 10;
 		int [][] matriz = new int[MAX][MAX];
 		int i,j;
+		
+		Life vida = new Life(MAX);
 		
 		for(i = 1; i < MAX -1; i++)
 		{
@@ -18,10 +18,10 @@ public class Main {
 			{
 				matriz[i][j] = Integer.parseInt(JOptionPane.showInputDialog("0 = Morta, 1 = Viva"));
 			}	
-		} */
+		}
 	
-	F.inicializa();
-	F.simulaVida(10);
+	vida.inicializa(matriz);
+	vida.simulaVida(10);
 
 	}
 
