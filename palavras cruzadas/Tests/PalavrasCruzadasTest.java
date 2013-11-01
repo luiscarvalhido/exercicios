@@ -1,4 +1,4 @@
-package Test;
+package Tests;
 
 import static org.junit.Assert.*;
 
@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestPalavraCruzada {
         
-        PalavrasCruzadas objetoTeste = new PalavrasCruzadas(5,8);       
+        PalavrasCruzadas main = new PalavrasCruzadas(2,4);       
 	
 	@Before
 	
